@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Program {
+struct Program: Codable {
     let porad: [Porad]
 }
 
-struct Porad {
+struct Porad: Codable {
+    
     let linky: Linky
     let vps: Int
     let datum: String
@@ -27,14 +28,20 @@ struct Porad {
     let obrazky: Obrazky
     let dostupnost: Dostupnost
     
+    
+//    static func == (lhs: Porad, rhs: Porad) -> Bool {
+//        lhs.vps == rhs.vps && lhs.datum == rhs.datum && lhs.cas == rhs.cas && lhs.dil == rhs.dil && lhs.zanr == rhs.zanr && lhs.stopaz == rhs.stopaz && lhs.noticka == rhs.noticka && lhs.regionalni == rhs.regionalni && lhs.alternativa == rhs.alternativa && lhs.linky == rhs.linky && lhs.nazvy == rhs.nazvy && lhs.ikony == rhs.ikony && lhs.obrazky == rhs.obrazky && lhs.dostupnost == rhs.dostupnost
+//
+//    }
+    
 }
 
-struct Linky {
+struct Linky: Codable, Equatable {
     let program: String
     let ivysilani: String
 }
 
-struct Nazvy {
+struct Nazvy: Codable, Equatable {
     let nadtitul: String?
     let nazev: String
     let original: String?
@@ -42,7 +49,7 @@ struct Nazvy {
     
 }
 
-struct Ikony {
+struct Ikony: Codable, Equatable {
     let zvuk: Zvuk
     let ad: Bool
     let skryte_titulky: Bool
@@ -57,7 +64,7 @@ struct Ikony {
     
 }
 
-enum Zvuk: String {
+enum Zvuk: String, Codable {
     case M = "mono"
     case S = "stereo"
     case D = "duální zvuk"
@@ -65,13 +72,13 @@ enum Zvuk: String {
     var description: String { rawValue }
 }
 
-struct Dostupnost {
+struct Dostupnost: Codable, Equatable {
     let stav: String
     let od: String
     let `do`: String
 }
 
-struct Obrazky {
+struct Obrazky: Codable, Equatable {
     let tv_program: String
     let nahled: String
 }

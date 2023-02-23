@@ -13,6 +13,7 @@
 		1F86211E29A2CC2100B95F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */; };
 		1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86212429A2CCA100B95F70 /* NetworkManager.swift */; };
 		1FE5684F29A815A800FF45B5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5684E29A815A800FF45B5 /* Program.swift */; };
+		1FE5685229A819A200FF45B5 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE5685129A819A200FF45B5 /* XMLParsing */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE5685229A819A200FF45B5 /* XMLParsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,9 @@
 			dependencies = (
 			);
 			name = CzechTV;
+			packageProductDependencies = (
+				1FE5685129A819A200FF45B5 /* XMLParsing */,
+			);
 			productName = CzechTV;
 			productReference = 1F86211329A2CC1F00B95F70 /* CzechTV.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 1F86210A29A2CC1F00B95F70;
+			packageReferences = (
+				1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */,
+			);
 			productRefGroup = 1F86211429A2CC1F00B95F70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FE5685129A819A200FF45B5 /* XMLParsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			productName = XMLParsing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F86210B29A2CC1F00B95F70 /* Project object */;
 }

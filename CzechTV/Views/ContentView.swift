@@ -9,19 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
-    @State private var description = "First"
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Hello, world!")
+            List {
+                Text("Program CT4")
                 
-                Text("WHy?")
-                Text(description.prefix(4))
             }
         }
         .onAppear {
             networkManager.fetchData()
-            description = networkManager.xmlPage
+            
         }
     }
 }
