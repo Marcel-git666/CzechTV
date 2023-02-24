@@ -17,23 +17,21 @@ class NetworkManager: ObservableObject {
     @Published var program: Program = Program.init(porad: [])
     
     func fetchData() {
-        if let url = URL(string: "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=test&date=27.12.2022&channel=ct24") {
+        if let url = URL(string: tvURL) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error == nil {
                     
                     if data != nil  {
                         do {
+                            
                             let decoder = XMLDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             self.program = try XMLDecoder().decode(Program.self, from: data!)
-                            
-                            
-                            //                                self.program = decodedData
+                                
                         } catch {
                             print(error)
                         }
-                        //                            let decodedData = try decoder.decode([Int].self, from: safeData)
                         
                     
                     }
