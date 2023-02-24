@@ -13,7 +13,7 @@
 		1F86211E29A2CC2100B95F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */; };
 		1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86212429A2CCA100B95F70 /* NetworkManager.swift */; };
 		1FE5684F29A815A800FF45B5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5684E29A815A800FF45B5 /* Program.swift */; };
-		1FE5685229A819A200FF45B5 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE5685129A819A200FF45B5 /* XMLParsing */; };
+		1FE5685A29A90FA600FF45B5 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE5685929A90FA600FF45B5 /* XMLCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE5685229A819A200FF45B5 /* XMLParsing in Frameworks */,
+				1FE5685A29A90FA600FF45B5 /* XMLCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +108,7 @@
 			);
 			name = CzechTV;
 			packageProductDependencies = (
-				1FE5685129A819A200FF45B5 /* XMLParsing */,
+				1FE5685929A90FA600FF45B5 /* XMLCoder */,
 			);
 			productName = CzechTV;
 			productReference = 1F86211329A2CC1F00B95F70 /* CzechTV.app */;
@@ -139,7 +139,7 @@
 			);
 			mainGroup = 1F86210A29A2CC1F00B95F70;
 			packageReferences = (
-				1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */,
+				1FE5685829A90FA600FF45B5 /* XCRemoteSwiftPackageReference "XMLCoder" */,
 			);
 			productRefGroup = 1F86211429A2CC1F00B95F70 /* Products */;
 			projectDirPath = "";
@@ -373,21 +373,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
+		1FE5685829A90FA600FF45B5 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
+			repositoryURL = "https://github.com/CoreOffice/XMLCoder";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1FE5685129A819A200FF45B5 /* XMLParsing */ = {
+		1FE5685929A90FA600FF45B5 /* XMLCoder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1FE5685029A819A200FF45B5 /* XCRemoteSwiftPackageReference "XMLParsing" */;
-			productName = XMLParsing;
+			package = 1FE5685829A90FA600FF45B5 /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			productName = XMLCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

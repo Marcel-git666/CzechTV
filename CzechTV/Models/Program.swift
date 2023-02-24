@@ -25,7 +25,7 @@ struct Porad: Codable {
     let noticka: String?
     let regionalni: String
     let alternativa: String
-    let ikony: Ikony
+    let ikonky: Ikonky
     let obrazky: Obrazky
     let dostupnost: Dostupnost
     
@@ -50,7 +50,7 @@ struct Nazvy: Codable, Equatable {
     
 }
 
-struct Ikony: Codable, Equatable {
+struct Ikonky: Codable, Equatable {
     let zvuk: String
     let ad: Int
     let skryte_titulky: Int
