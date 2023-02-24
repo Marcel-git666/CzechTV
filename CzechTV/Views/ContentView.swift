@@ -15,6 +15,8 @@ struct ContentView: View {
             List {
                 Text("Program CT4")
                 
+                Text("\(networkManager.program.porad.count)")
+                
             }
         }
         .onAppear {

@@ -13,8 +13,9 @@ struct Program: Codable {
 
 struct Porad: Codable {
     
+    
     let linky: Linky
-    let vps: Int
+    let vps: String
     let datum: String
     let cas: String
     let nazvy: Nazvy
@@ -50,27 +51,27 @@ struct Nazvy: Codable, Equatable {
 }
 
 struct Ikony: Codable, Equatable {
-    let zvuk: Zvuk
-    let ad: Bool
-    let skryte_titulky: Bool
-    let neslysici: Bool
-    let live: Bool
-    let premiera: Bool
-    let cb: Bool
-    let hvezdicka: Bool
+    let zvuk: String
+    let ad: Int
+    let skryte_titulky: Int
+    let neslysici: Int
+    let live: Int
+    let premiera: Int
+    let cb: Int
+    let hvezdicka: Int
     let labeling: String
-    let puvodni_zneni: Bool
+    let puvodni_zneni: Int
     let pomer: String
-    
+    let hd: Int
 }
 
-enum Zvuk: String, Codable {
-    case M = "mono"
-    case S = "stereo"
-    case D = "duální zvuk"
-    
-    var description: String { rawValue }
-}
+//enum Zvuk: String, Codable {
+//    case M = "mono"
+//    case S = "stereo"
+//    case D = "duální zvuk"
+//
+//    var description: String { rawValue }
+//}
 
 struct Dostupnost: Codable, Equatable {
     let stav: String
