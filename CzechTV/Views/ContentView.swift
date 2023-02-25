@@ -13,9 +13,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Program CT4")
-                
-                Text("\(networkManager.program.porad.count)")
+                ForEach(networkManager.program.porad, id: \.self) { show in
+                        HStack {
+                            Text(show.nazvy.nazev)
+                            
+                            
+                        }
+                    }
+                    
                 
             }
         }

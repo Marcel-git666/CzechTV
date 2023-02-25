@@ -11,8 +11,7 @@ struct Program: Codable {
     let porad: [Porad]
 }
 
-struct Porad: Codable {
-    
+struct Porad: Codable, Hashable {
     
     let linky: Linky
     let vps: String
@@ -29,6 +28,9 @@ struct Porad: Codable {
     let obrazky: Obrazky
     let dostupnost: Dostupnost
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(vps)
+    }
     
 //    static func == (lhs: Porad, rhs: Porad) -> Bool {
 //        lhs.vps == rhs.vps && lhs.datum == rhs.datum && lhs.cas == rhs.cas && lhs.dil == rhs.dil && lhs.zanr == rhs.zanr && lhs.stopaz == rhs.stopaz && lhs.noticka == rhs.noticka && lhs.regionalni == rhs.regionalni && lhs.alternativa == rhs.alternativa && lhs.linky == rhs.linky && lhs.nazvy == rhs.nazvy && lhs.ikony == rhs.ikony && lhs.obrazky == rhs.obrazky && lhs.dostupnost == rhs.dostupnost

@@ -8,8 +8,8 @@
 import Foundation
 import XMLCoder
 
-let apiKey = ""
-let tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=test&date=26.11.2022&channel=ct24"
+let user = "gwaihir"
+let tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=gwaihir&date=25.02.2023&channel=ct1"
 
 class NetworkManager: ObservableObject {
     
@@ -27,8 +27,11 @@ class NetworkManager: ObservableObject {
                             
                             let decoder = XMLDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            self.program = try XMLDecoder().decode(Program.self, from: data!)
+                            let decodedData = try XMLDecoder().decode(Program.self, from: data!)
+                            DispatchQueue.main.async {
+                                self.program = decodedData
                                 
+                            }
                         } catch {
                             print(error)
                         }
