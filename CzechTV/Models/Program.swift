@@ -86,3 +86,14 @@ struct Obrazky: Codable, Equatable {
     let nahled: String
 }
 
+enum Channels: String, Identifiable, CaseIterable {
+    
+    case ct1 = "ČT1"
+    case ct2 = "ČT2"
+    case ct24 = "ČT24"
+    case ct4 = "ČT sport"
+    case ct5 = "ČT :D"
+    case ct6 = "ČT art"
+    case ct7 = "ČT3"
+    var id: Channels { self }
+}

@@ -9,14 +9,32 @@ import Foundation
 import XMLCoder
 
 let user = "gwaihir"
-let tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=gwaihir&date=25.02.2023&channel=ct1"
+
+
+//&date=25.02.2023&channel=ct1
 
 class NetworkManager: ObservableObject {
     
     
+    
     @Published var program: Program = Program.init(porad: [])
     
-    func fetchData() {
+    func fetchData(date: Date, channel: Channels) {
+        var tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=gwaihir"
+        var urlDate: String
+        var urlChannel: String
+        let formatter2: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            return formatter
+        }()
+        
+        urlDate = "&date=\(formatter2.string(from: date))"
+        print(urlDate)
+        urlChannel = "&channel=\(channel)"
+        print(urlChannel)
+        tvURL = tvURL + urlDate + urlChannel
+        print(tvURL)
         if let url = URL(string: tvURL) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
