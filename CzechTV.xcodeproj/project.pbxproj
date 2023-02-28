@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F26324229AA3802005685AF /* ShowsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26324129AA3802005685AF /* ShowsList.swift */; };
+		1F26325D29AE51B8005685AF /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26325C29AE51B8005685AF /* HelpView.swift */; };
 		1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */; };
 		1F86211929A2CC1F00B95F70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211829A2CC1F00B95F70 /* ContentView.swift */; };
 		1F86211B29A2CC2100B95F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211A29A2CC2100B95F70 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1F26324129AA3802005685AF /* ShowsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsList.swift; sourceTree = "<group>"; };
+		1F26325C29AE51B8005685AF /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		1F86211329A2CC1F00B95F70 /* CzechTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CzechTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVApp.swift; sourceTree = "<group>"; };
 		1F86211829A2CC1F00B95F70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1F86211829A2CC1F00B95F70 /* ContentView.swift */,
+				1F26325C29AE51B8005685AF /* HelpView.swift */,
 				1F26324129AA3802005685AF /* ShowsList.swift */,
 			);
 			path = Views;
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE5684F29A815A800FF45B5 /* Program.swift in Sources */,
+				1F26325D29AE51B8005685AF /* HelpView.swift in Sources */,
 				1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */,
 				1F86211929A2CC1F00B95F70 /* ContentView.swift in Sources */,
 				1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */,
