@@ -31,17 +31,14 @@ struct Porad: Codable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(vps)
     }
-    
-//    static func == (lhs: Porad, rhs: Porad) -> Bool {
-//        lhs.vps == rhs.vps && lhs.datum == rhs.datum && lhs.cas == rhs.cas && lhs.dil == rhs.dil && lhs.zanr == rhs.zanr && lhs.stopaz == rhs.stopaz && lhs.noticka == rhs.noticka && lhs.regionalni == rhs.regionalni && lhs.alternativa == rhs.alternativa && lhs.linky == rhs.linky && lhs.nazvy == rhs.nazvy && lhs.ikony == rhs.ikony && lhs.obrazky == rhs.obrazky && lhs.dostupnost == rhs.dostupnost
-//
-//    }
+    static let example = Porad(linky: Linky.example, vps: "11223344", datum: "01.01.2023", cas: "06:00", nazvy: Nazvy.example, dil: "", zanr: "sci-fi", stopaz: "", noticka: "Popisek pořadu", regionalni: "CZ", alternativa: "není", ikonky: Ikonky.example, obrazky: Obrazky.example, dostupnost: Dostupnost.example)
     
 }
 
 struct Linky: Codable, Equatable {
     let program: String
     let ivysilani: String
+    static let example = Linky(program: "https://google.com", ivysilani: "https://ivysilani.cz")
 }
 
 struct Nazvy: Codable, Equatable {
@@ -49,7 +46,7 @@ struct Nazvy: Codable, Equatable {
     let nazev: String
     let original: String?
     let nazev_casti: String?
-    
+    static let example = Nazvy(nadtitul: "", nazev: "Název pořadu", original: "Show title", nazev_casti: "Part 1")
 }
 
 struct Ikonky: Codable, Equatable {
@@ -65,6 +62,7 @@ struct Ikonky: Codable, Equatable {
     let puvodni_zneni: Int
     let pomer: String
     let hd: Int
+    static let example = Ikonky(zvuk: "S", ad: 0, skryte_titulky: 1, neslysici: 0, live: 0, premiera: 1, cb: 0, hvezdicka: 1, labeling: "1", puvodni_zneni: 1, pomer: "4:3", hd: 1)
 }
 
 //enum Zvuk: String, Codable {
@@ -79,11 +77,13 @@ struct Dostupnost: Codable, Equatable {
     let stav: String
     let od: String
     let `do`: String
+    static let example = Dostupnost(stav: "stav", od: "from", do: "do")
 }
 
 struct Obrazky: Codable, Equatable {
     let tv_program: String
     let nahled: String
+    static let example = Obrazky(tv_program: "", nahled: "")
 }
 
 enum Channels: String, Identifiable, CaseIterable {
