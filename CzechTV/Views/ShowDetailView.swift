@@ -35,6 +35,13 @@ struct ShowDetailView: View {
                     Text(show?.zanr ?? "Zábava")
                     Text(show?.noticka ?? "Témata ze školní biologie ve světle nejnovějších poznatků vědeckých pracovišť. Pořad pro žáky 2. stupně ZŠ")
                 }
+                NavigationLink(destination: WebView(urlString: show?.linky.ivysilani)) {
+                    
+                    
+                    Text(show?.linky.ivysilani ?? "Žádný odkaz na ivysilani.cz")
+                    
+                }
+                
                 Spacer()
                 
             }

@@ -20,7 +20,7 @@ class NetworkManager: ObservableObject {
     @Published var program: Program = Program.init(porad: [])
     
     func fetchData(date: Date, channel: Channels) {
-        var tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=gwaihir"
+        var tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=\(user)"
         var urlDate: String
         var urlChannel: String
         let formatter2: DateFormatter = {
@@ -30,11 +30,8 @@ class NetworkManager: ObservableObject {
         }()
         
         urlDate = "&date=\(formatter2.string(from: date))"
-        print(urlDate)
         urlChannel = "&channel=\(channel)"
-        print(urlChannel)
         tvURL = tvURL + urlDate + urlChannel
-        print(tvURL)
         if let url = URL(string: tvURL) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
