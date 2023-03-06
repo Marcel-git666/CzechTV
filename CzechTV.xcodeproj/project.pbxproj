@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F26324229AA3802005685AF /* ShowsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26324129AA3802005685AF /* ShowsList.swift */; };
 		1F26325D29AE51B8005685AF /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26325C29AE51B8005685AF /* HelpView.swift */; };
+		1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326229AE94D0005685AF /* ShowDetailView.swift */; };
+		1F26326529AFA456005685AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326429AFA456005685AF /* WebView.swift */; };
 		1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */; };
 		1F86211929A2CC1F00B95F70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211829A2CC1F00B95F70 /* ContentView.swift */; };
 		1F86211B29A2CC2100B95F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211A29A2CC2100B95F70 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		1F26324129AA3802005685AF /* ShowsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsList.swift; sourceTree = "<group>"; };
 		1F26325C29AE51B8005685AF /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		1F26326229AE94D0005685AF /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
+		1F26326429AFA456005685AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1F86211329A2CC1F00B95F70 /* CzechTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CzechTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVApp.swift; sourceTree = "<group>"; };
 		1F86211829A2CC1F00B95F70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				1F86211829A2CC1F00B95F70 /* ContentView.swift */,
 				1F26325C29AE51B8005685AF /* HelpView.swift */,
 				1F26324129AA3802005685AF /* ShowsList.swift */,
+				1F26326229AE94D0005685AF /* ShowDetailView.swift */,
+				1F26326429AFA456005685AF /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */,
+				1F26326529AFA456005685AF /* WebView.swift in Sources */,
 				1FE5684F29A815A800FF45B5 /* Program.swift in Sources */,
 				1F26325D29AE51B8005685AF /* HelpView.swift in Sources */,
 				1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */,
@@ -313,6 +321,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CzechTV/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -342,6 +352,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CzechTV/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
