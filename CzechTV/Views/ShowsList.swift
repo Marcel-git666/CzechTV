@@ -30,7 +30,16 @@ struct ShowsList: View {
             
         }
         .onAppear {
-            networkManager.fetchData(date: date, channel: channel)
+            networkManager.fetchData(date: date, channel: channel) { result in
+                switch result {
+                case .success:
+                    // Handle success, no need for specific action here.
+                    break
+                case .failure(let error):
+                    // Handle error (for now we just print, but in a real app you'd probably show an alert or some feedback)
+                    print("Error fetching data: \(error.localizedDescription)")
+                }
+            }
         }
     }
 }
