@@ -12,6 +12,11 @@ struct ShowsList: View {
     let date: Date
     let channel: Channels
     
+    init(date: Date = Date.now, channel: Channels = .ct1) {
+        self.date = date
+        self.channel = channel
+    }
+    
     var body: some View {
         List {
             Text("Program \(channel.rawValue)")

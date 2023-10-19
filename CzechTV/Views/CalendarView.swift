@@ -62,10 +62,10 @@ struct CalendarView: View {
                 .fontWeight(.bold)
             }
         }
-        .onAppear {
-            networkManager.fetchData(date: date, channel: channel)
-        
-        }
+//        .onAppear {
+//            networkManager.fetchData(date: date, channel: channel)
+//        
+//        }
     }
 }
 

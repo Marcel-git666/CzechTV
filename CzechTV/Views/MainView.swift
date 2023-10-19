@@ -16,17 +16,17 @@ struct MainView: View {
                     Text("Program")
                 }
 
-            ChannelDetailsView()
+            ShowsList()
                 .tabItem {
                     Image(systemName: "play.rectangle")
                     Text("Channel")
                 }
 
-            TodayShowsView()
-                .tabItem {
-                    Image(systemName: "sun.max")
-                    Text("Today")
-                }
+//            TodayShowsView()
+//                .tabItem {
+//                    Image(systemName: "sun.max")
+//                    Text("Today")
+//                }
 
             HelpView()
                 .tabItem {
