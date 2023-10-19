@@ -94,6 +94,5 @@ enum Channels: String, Identifiable, CaseIterable {
     case ct4 = "ČT sport"
     case ct5 = "ČT :D"
     case ct6 = "ČT art"
-    case ct7 = "ČT3"
     var id: Channels { self }
 }

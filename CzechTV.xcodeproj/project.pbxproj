@@ -11,8 +11,9 @@
 		1F26325D29AE51B8005685AF /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26325C29AE51B8005685AF /* HelpView.swift */; };
 		1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326229AE94D0005685AF /* ShowDetailView.swift */; };
 		1F26326529AFA456005685AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326429AFA456005685AF /* WebView.swift */; };
+		1F3061D92AE13CCD009F9DB5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3061D82AE13CCD009F9DB5 /* MainView.swift */; };
 		1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */; };
-		1F86211929A2CC1F00B95F70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211829A2CC1F00B95F70 /* ContentView.swift */; };
+		1F86211929A2CC1F00B95F70 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211829A2CC1F00B95F70 /* CalendarView.swift */; };
 		1F86211B29A2CC2100B95F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211A29A2CC2100B95F70 /* Assets.xcassets */; };
 		1F86211E29A2CC2100B95F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */; };
 		1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86212429A2CCA100B95F70 /* NetworkManager.swift */; };
@@ -25,9 +26,10 @@
 		1F26325C29AE51B8005685AF /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		1F26326229AE94D0005685AF /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
 		1F26326429AFA456005685AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1F3061D82AE13CCD009F9DB5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1F86211329A2CC1F00B95F70 /* CzechTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CzechTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVApp.swift; sourceTree = "<group>"; };
-		1F86211829A2CC1F00B95F70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1F86211829A2CC1F00B95F70 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1F86211A29A2CC2100B95F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F86212429A2CCA100B95F70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F3061D72AE111C0009F9DB5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1F86212429A2CCA100B95F70 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1F86210A29A2CC1F00B95F70 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 			children = (
 				1FE5685B29A91D8900FF45B5 /* Info.plist */,
 				1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */,
+				1F3061D72AE111C0009F9DB5 /* Services */,
 				1F86212629A2CCB400B95F70 /* Views */,
 				1F86211A29A2CC2100B95F70 /* Assets.xcassets */,
 				1F86212729A2CCCE00B95F70 /* Models */,
@@ -87,11 +98,12 @@
 		1F86212629A2CCB400B95F70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F86211829A2CC1F00B95F70 /* ContentView.swift */,
+				1F86211829A2CC1F00B95F70 /* CalendarView.swift */,
 				1F26325C29AE51B8005685AF /* HelpView.swift */,
 				1F26324129AA3802005685AF /* ShowsList.swift */,
 				1F26326229AE94D0005685AF /* ShowDetailView.swift */,
 				1F26326429AFA456005685AF /* WebView.swift */,
+				1F3061D82AE13CCD009F9DB5 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,7 +111,6 @@
 		1F86212729A2CCCE00B95F70 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F86212429A2CCA100B95F70 /* NetworkManager.swift */,
 				1FE5684E29A815A800FF45B5 /* Program.swift */,
 			);
 			path = Models;
@@ -136,7 +147,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					1F86211229A2CC1F00B95F70 = {
 						CreatedOnToolsVersion = 14.2;
@@ -182,11 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */,
+				1F3061D92AE13CCD009F9DB5 /* MainView.swift in Sources */,
 				1F26326529AFA456005685AF /* WebView.swift in Sources */,
 				1FE5684F29A815A800FF45B5 /* Program.swift in Sources */,
 				1F26325D29AE51B8005685AF /* HelpView.swift in Sources */,
 				1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */,
-				1F86211929A2CC1F00B95F70 /* ContentView.swift in Sources */,
+				1F86211929A2CC1F00B95F70 /* CalendarView.swift in Sources */,
 				1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */,
 				1F26324229AA3802005685AF /* ShowsList.swift in Sources */,
 			);
@@ -231,6 +243,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -291,6 +304,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
