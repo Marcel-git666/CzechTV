@@ -18,24 +18,26 @@ struct ShowsList: View {
     }
     
     var body: some View {
-        List {
-            Text("Program \(channel.rawValue)")
-                .fontWeight(.bold)
-            ForEach(networkManager.program.porad, id: \.self) { show in
-                NavigationLink(destination: ShowDetailView(show: show)) {
-                    HStack {
-                        AsyncImage(url: URL(string: show.obrazky.tv_program))
-                            .frame(width: 80, height: 50)
-                        Text(show.cas)
-                        Text(show.nazvy.nazev)
+        NavigationStack {
+            List {
+                Text("Program \(channel.rawValue) \(date.formatted())")
+                    .fontWeight(.bold)
+                ForEach(networkManager.program.porad, id: \.self) { show in
+                    NavigationLink(destination: ShowDetailView(show: show)) {
+                        HStack {
+                            AsyncImage(url: URL(string: show.obrazky.tv_program))
+                                .frame(width: 80, height: 50)
+                            Text(show.cas)
+                            Text(show.nazvy.nazev)
+                        }
                     }
                 }
+                
+                
             }
-            
-            
+            .onAppear {
+                networkManager.fetchData(date: date, channel: channel)
         }
-        .onAppear {
-            networkManager.fetchData(date: date, channel: channel)
         }
     }
 }

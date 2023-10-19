@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var tabViewModel = TabViewModel()
+
     var body: some View {
-        TabView {
-            CalendarView()
+        TabView(selection: $tabViewModel.selectedTab) {
+            CalendarView(tabViewModel: tabViewModel)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Program")
                 }
+                .tag(0)
 
             ShowsList()
                 .tabItem {
                     Image(systemName: "play.rectangle")
                     Text("Channel")
                 }
-
-//            TodayShowsView()
-//                .tabItem {
-//                    Image(systemName: "sun.max")
-//                    Text("Today")
-//                }
+                .tag(1)
 
             HelpView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
+                .tag(2)
         }
     }
 }
+
 
 #Preview {
     MainView()

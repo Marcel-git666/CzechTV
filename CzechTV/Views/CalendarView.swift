@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var tabViewModel: TabViewModel
     @State private var channel: Channels = .ct1
     @State private var date = Date.now
     @State private var showingAboutAlert = false
@@ -27,11 +27,15 @@ struct CalendarView: View {
             VStack(spacing: 20)  {
                 ChannelPickerView(channel: $channel)
                 DatePickerView(date: $date)
-                NavigationLink("Show channel: \(channel.rawValue) on \(date, formatter: dateFormatter)", destination: ShowsList(date: date, channel: channel))
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 20).fill(Color.green))
-                    .shadow(radius: 2, x: 2, y: 2)
-                    .foregroundColor(.white)
+                Button(action: {
+                    tabViewModel.selectedTab = 1
+                }) {
+                    Text("Show channel: \(channel.rawValue) on \(date, formatter: dateFormatter)")
+                }
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 20).fill(Color.green))
+                .shadow(radius: 2, x: 2, y: 2)
+                .foregroundColor(.white)
             
             }
             .navigationTitle("Program ČT")
@@ -44,14 +48,7 @@ struct CalendarView: View {
                 }
                 .foregroundColor(.green)
                 .fontWeight(.bold)
-                Button("Today") {
-                    showToday = true
-                }
-                .navigationDestination(isPresented: $showToday, destination: {
-                    ShowsList(date: Date.now, channel: channel)
-                })
-                .foregroundColor(.green)
-                .fontWeight(.bold)
+                
                 Button("Help") {
                     showHelp = true
                 }
@@ -62,16 +59,13 @@ struct CalendarView: View {
                 .fontWeight(.bold)
             }
         }
-//        .onAppear {
-//            networkManager.fetchData(date: date, channel: channel)
-//        
-//        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CalendarView_Previews: PreviewProvider {
+    static let tabViewModel = TabViewModel()
     static var previews: some View {
-        CalendarView()
+        CalendarView(tabViewModel: tabViewModel)
     }
 }
 

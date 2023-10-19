@@ -12,6 +12,8 @@
 		1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326229AE94D0005685AF /* ShowDetailView.swift */; };
 		1F26326529AFA456005685AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326429AFA456005685AF /* WebView.swift */; };
 		1F3061D92AE13CCD009F9DB5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3061D82AE13CCD009F9DB5 /* MainView.swift */; };
+		1F3061DC2AE14D4E009F9DB5 /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3061DB2AE14D4E009F9DB5 /* TabViewModel.swift */; };
+		1F3061DE2AE1537E009F9DB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3061DD2AE1537D009F9DB5 /* Extensions.swift */; };
 		1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */; };
 		1F86211929A2CC1F00B95F70 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86211829A2CC1F00B95F70 /* CalendarView.swift */; };
 		1F86211B29A2CC2100B95F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211A29A2CC2100B95F70 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		1F26326229AE94D0005685AF /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
 		1F26326429AFA456005685AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1F3061D82AE13CCD009F9DB5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1F3061DB2AE14D4E009F9DB5 /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
+		1F3061DD2AE1537D009F9DB5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1F86211329A2CC1F00B95F70 /* CzechTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CzechTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVApp.swift; sourceTree = "<group>"; };
 		1F86211829A2CC1F00B95F70 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		1F3061DA2AE14D35009F9DB5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1F3061DB2AE14D4E009F9DB5 /* TabViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		1F86210A29A2CC1F00B95F70 = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +90,12 @@
 			children = (
 				1FE5685B29A91D8900FF45B5 /* Info.plist */,
 				1F86211629A2CC1F00B95F70 /* CzechTVApp.swift */,
+				1F3061DA2AE14D35009F9DB5 /* ViewModels */,
+				1F86212729A2CCCE00B95F70 /* Models */,
 				1F3061D72AE111C0009F9DB5 /* Services */,
 				1F86212629A2CCB400B95F70 /* Views */,
 				1F86211A29A2CC2100B95F70 /* Assets.xcassets */,
-				1F86212729A2CCCE00B95F70 /* Models */,
+				1F3061DD2AE1537D009F9DB5 /* Extensions.swift */,
 				1F86211C29A2CC2100B95F70 /* Preview Content */,
 			);
 			path = CzechTV;
@@ -196,10 +210,12 @@
 				1F3061D92AE13CCD009F9DB5 /* MainView.swift in Sources */,
 				1F26326529AFA456005685AF /* WebView.swift in Sources */,
 				1FE5684F29A815A800FF45B5 /* Program.swift in Sources */,
+				1F3061DC2AE14D4E009F9DB5 /* TabViewModel.swift in Sources */,
 				1F26325D29AE51B8005685AF /* HelpView.swift in Sources */,
 				1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */,
 				1F86211929A2CC1F00B95F70 /* CalendarView.swift in Sources */,
 				1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */,
+				1F3061DE2AE1537E009F9DB5 /* Extensions.swift in Sources */,
 				1F26324229AA3802005685AF /* ShowsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
