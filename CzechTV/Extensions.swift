@@ -8,9 +8,11 @@
 import Foundation
 
 extension Date {
-    var formatted: String {
+    var onlyDate: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy"
+        formatter.timeStyle = .none
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateStyle = .short
         return formatter.string(from: self)
     }
 }

@@ -15,7 +15,7 @@ struct ShowsList: View {
     var body: some View {
         NavigationStack {
             List {
-                Text("Program \(tabViewModel.selectedChannel.rawValue) \(tabViewModel.selectedDate.formatted())")
+                Text("Program \(tabViewModel.selectedChannel.rawValue) \(tabViewModel.selectedDate.onlyDate)")
                     .fontWeight(.bold)
                 ForEach(networkManager.program.porad, id: \.self) { show in
                     NavigationLink(destination: ShowDetailView(show: show)) {

@@ -15,11 +15,6 @@ struct CalendarView: View {
     @State private var showHelp = false
     @State private var showToday = false
     
-    let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            return formatter
-        }()
     
     
     var body: some View {
@@ -32,7 +27,7 @@ struct CalendarView: View {
                     tabViewModel.selectedChannel = channel
                     tabViewModel.selectedTab = 1
                 }) {
-                    Text("Show channel: \(channel.rawValue) on \(date, formatter: dateFormatter)")
+                    Text("Show channel: \(channel.rawValue) on \(date.onlyDate)")
                 }
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 20).fill(Color.green))
