@@ -14,25 +14,40 @@ struct ShowsList: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                Text("Program \(tabViewModel.selectedChannel.rawValue) \(tabViewModel.selectedDate.onlyDate)")
-                    .fontWeight(.bold)
-                ForEach(networkManager.program.porad, id: \.self) { show in
-                    NavigationLink(destination: ShowDetailView(show: show)) {
-                        HStack {
-                            AsyncImage(url: URL(string: show.obrazky.tv_program))
-                                .frame(width: 80, height: 50)
-                            Text(show.cas)
-                            Text(show.nazvy.nazev)
+            ZStack {
+                Color.green.opacity(0.2).edgesIgnoringSafeArea(.all)
+                VStack(spacing: 20) {
+                    Text("\(tabViewModel.selectedChannel.rawValue) \(tabViewModel.selectedDate.onlyDate)")
+                        .fontWeight(.bold)
+                    ScrollView {
+                        VStack(spacing: 15) {
+                            ForEach(networkManager.program.porad, id: \.self) { show in
+                                NavigationLink(destination: ShowDetailView(show: show)) {
+                                    HStack {
+                                        AsyncImage(url: URL(string: show.obrazky.tv_program))
+                                            .frame(width: 50, height: 50)
+                                        VStack(alignment: .leading) {
+                                            Text(show.cas)
+                                            Text(show.nazvy.nazev)
+                                        }
+                                        Spacer()
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.green.opacity(0.2))
+                                    .cornerRadius(10)
+                                    .padding(.horizontal)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
                         }
+                        .padding(.bottom, 20)
                     }
                 }
-                
-                
+                .onAppear {
+                    networkManager.fetchData(date: tabViewModel.selectedDate, channel: tabViewModel.selectedChannel)
+                }
+                .navigationTitle("Program List")
             }
-            .onAppear {
-                networkManager.fetchData(date: tabViewModel.selectedDate, channel: tabViewModel.selectedChannel)
-        }
         }
     }
 }

@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct HelpView: View {
+struct SettingsView: View {
     var body: some View {
         NavigationStack {
             VStack {
                 Text("This will be helpfull page how to use this app.")
             }
-            .navigationTitle("Help")
+            .navigationTitle("Settings")
         }
     }
 }
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView()
+        SettingsView()
     }
 }

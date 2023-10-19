@@ -50,7 +50,7 @@ struct CalendarView: View {
                     showHelp = true
                 }
                 .navigationDestination(isPresented: $showHelp, destination: {
-                    HelpView()
+                    SettingsView()
                 })
                 .foregroundColor(.green)
                 .fontWeight(.bold)

@@ -26,7 +26,7 @@ struct MainView: View {
                 }
                 .tag(1)
 
-            HelpView()
+            SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

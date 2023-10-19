@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F26324229AA3802005685AF /* ShowsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26324129AA3802005685AF /* ShowsList.swift */; };
-		1F26325D29AE51B8005685AF /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26325C29AE51B8005685AF /* HelpView.swift */; };
+		1F26325D29AE51B8005685AF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26325C29AE51B8005685AF /* SettingsView.swift */; };
 		1F26326329AE94D0005685AF /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326229AE94D0005685AF /* ShowDetailView.swift */; };
 		1F26326529AFA456005685AF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26326429AFA456005685AF /* WebView.swift */; };
 		1F3061D92AE13CCD009F9DB5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3061D82AE13CCD009F9DB5 /* MainView.swift */; };
@@ -19,13 +19,14 @@
 		1F86211B29A2CC2100B95F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211A29A2CC2100B95F70 /* Assets.xcassets */; };
 		1F86211E29A2CC2100B95F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */; };
 		1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86212429A2CCA100B95F70 /* NetworkManager.swift */; };
+		1F8BFA612AE18FD9007563D4 /* CzechTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BFA602AE18FD9007563D4 /* CzechTVAPI.swift */; };
 		1FE5684F29A815A800FF45B5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5684E29A815A800FF45B5 /* Program.swift */; };
 		1FE5685A29A90FA600FF45B5 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE5685929A90FA600FF45B5 /* XMLCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F26324129AA3802005685AF /* ShowsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsList.swift; sourceTree = "<group>"; };
-		1F26325C29AE51B8005685AF /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		1F26325C29AE51B8005685AF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1F26326229AE94D0005685AF /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
 		1F26326429AFA456005685AF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1F3061D82AE13CCD009F9DB5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 		1F86211A29A2CC2100B95F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F86211D29A2CC2100B95F70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F86212429A2CCA100B95F70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1F8BFA602AE18FD9007563D4 /* CzechTVAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVAPI.swift; sourceTree = "<group>"; };
 		1FE5684E29A815A800FF45B5 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		1FE5685B29A91D8900FF45B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				1F86211829A2CC1F00B95F70 /* CalendarView.swift */,
-				1F26325C29AE51B8005685AF /* HelpView.swift */,
+				1F26325C29AE51B8005685AF /* SettingsView.swift */,
 				1F26324129AA3802005685AF /* ShowsList.swift */,
 				1F26326229AE94D0005685AF /* ShowDetailView.swift */,
 				1F26326429AFA456005685AF /* WebView.swift */,
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				1FE5684E29A815A800FF45B5 /* Program.swift */,
+				1F8BFA602AE18FD9007563D4 /* CzechTVAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,9 +214,10 @@
 				1F26326529AFA456005685AF /* WebView.swift in Sources */,
 				1FE5684F29A815A800FF45B5 /* Program.swift in Sources */,
 				1F3061DC2AE14D4E009F9DB5 /* TabViewModel.swift in Sources */,
-				1F26325D29AE51B8005685AF /* HelpView.swift in Sources */,
+				1F26325D29AE51B8005685AF /* SettingsView.swift in Sources */,
 				1F86212529A2CCA100B95F70 /* NetworkManager.swift in Sources */,
 				1F86211929A2CC1F00B95F70 /* CalendarView.swift in Sources */,
+				1F8BFA612AE18FD9007563D4 /* CzechTVAPI.swift in Sources */,
 				1F86211729A2CC1F00B95F70 /* CzechTVApp.swift in Sources */,
 				1F3061DE2AE1537E009F9DB5 /* Extensions.swift in Sources */,
 				1F26324229AA3802005685AF /* ShowsList.swift in Sources */,

@@ -8,19 +8,20 @@
 import Foundation
 import XMLCoder
 
-let user = "gwaihir"
-
-
-//&date=25.02.2023&channel=ct1
+enum NetworkError: Error {
+    case badURL
+    case networkProblem(Error)
+    case dataNotFound
+    case decodingError(Error)
+}
 
 class NetworkManager: ObservableObject {
     
-    
-    
     @Published var program: Program = Program.init(porad: [])
+    @Published var error: NetworkError?
     
     func fetchData(date: Date, channel: Channels) {
-        var tvURL = "https://www.ceskatelevize.cz/services-old/programme/xml/schedule.php?user=\(user)"
+        var tvURL = CzechTVAPI.tvURL
         var urlDate: String
         var urlChannel: String
         let formatter2: DateFormatter = {
@@ -30,72 +31,42 @@ class NetworkManager: ObservableObject {
         }()
         
         urlDate = "&date=\(formatter2.string(from: date))"
+        print(urlDate)
+        print(date.onlyDate)
         urlChannel = "&channel=\(channel)"
         tvURL = tvURL + urlDate + urlChannel
-        if let url = URL(string: tvURL) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                if error == nil {
-                    
-                    if data != nil  {
-                        do {
-                            
-                            let decoder = XMLDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            let decodedData = try XMLDecoder().decode(Program.self, from: data!)
-                            DispatchQueue.main.async {
-                                self.program = decodedData
-                                
-                            }
-                        } catch {
-                            print(error)
-                        }
-                        
-                    
-                    }
+        guard let url = URL(string: tvURL) else {
+            self.error = .badURL
+            return
+        }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.error = .networkProblem(error)
+                }
+                return
+            }
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    self.error = .dataNotFound
+                }
+                return
+            }
+            do {
+                let decoder = XMLDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let decodedData = try XMLDecoder().decode(Program.self, from: data)
+                DispatchQueue.main.async {
+                    self.program = decodedData
+                }
+            } catch let decodingError {
+                DispatchQueue.main.async {
+                    self.error = .decodingError(decodingError)
                 }
             }
-            task.resume()
         }
-            
-    
+        task.resume()
     }
-}
-
-class Parser : NSObject, XMLParserDelegate {
-    
-    var articleNth = 0
-//    func parserDidStartDocument(_ parser: XMLParser) {
-//        print("Start of the document")
-//        print("Line number: \(parser.lineNumber)")
-//    }
-//
-//    func parserDidEndDocument(_ parser: XMLParser) {
-//        print("End of the document")
-//        print("Line number: \(parser.lineNumber)")
-//    }
-    func parser(
-        _ parser: XMLParser,
-        didStartElement elementName: String,
-        namespaceURI: String?,
-        qualifiedName qName: String?,
-        attributes attributeDict: [String : String] = [:]
-        
-    ) {
-        if elementName == "program" && !attributeDict.isEmpty {
-            for (attr_key, attr_val) in attributeDict {
-                print("Key: \(attr_key), value: \(attr_val)")
-            }
-        }
-        if (elementName=="porad") {
-            articleNth += 1
-            
-            
-        } else if (elementName=="nazvy") {
-            print("'\(elementName)' in the article element number \(articleNth)")
-        }
-        
-    }
-
 }
 
