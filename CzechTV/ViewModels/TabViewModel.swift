@@ -9,4 +9,6 @@ import Foundation
 
 class TabViewModel: ObservableObject {
     @Published var selectedTab: Int = 0
+    @Published var selectedDate: Date = Date.now
+    @Published var selectedChannel: Channels = .ct1
 }

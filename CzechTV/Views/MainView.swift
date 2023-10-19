@@ -19,7 +19,7 @@ struct MainView: View {
                 }
                 .tag(0)
 
-            ShowsList()
+            ShowsList(tabViewModel: tabViewModel)
                 .tabItem {
                     Image(systemName: "play.rectangle")
                     Text("Channel")

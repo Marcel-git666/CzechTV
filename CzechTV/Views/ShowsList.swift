@@ -9,18 +9,13 @@ import SwiftUI
 
 struct ShowsList: View {
     @ObservedObject var networkManager = NetworkManager()
-    let date: Date
-    let channel: Channels
+    @ObservedObject var tabViewModel: TabViewModel
     
-    init(date: Date = Date.now, channel: Channels = .ct1) {
-        self.date = date
-        self.channel = channel
-    }
     
     var body: some View {
         NavigationStack {
             List {
-                Text("Program \(channel.rawValue) \(date.formatted())")
+                Text("Program \(tabViewModel.selectedChannel.rawValue) \(tabViewModel.selectedDate.formatted())")
                     .fontWeight(.bold)
                 ForEach(networkManager.program.porad, id: \.self) { show in
                     NavigationLink(destination: ShowDetailView(show: show)) {
@@ -36,15 +31,16 @@ struct ShowsList: View {
                 
             }
             .onAppear {
-                networkManager.fetchData(date: date, channel: channel)
+                networkManager.fetchData(date: tabViewModel.selectedDate, channel: tabViewModel.selectedChannel)
         }
         }
     }
 }
 
 struct ShowsList_Previews: PreviewProvider {
+    static let tabViewModel = TabViewModel()
     static var previews: some View {
-        ShowsList(date: Date.now, channel: .ct4)
+        ShowsList(tabViewModel: tabViewModel)
     }
 }
 

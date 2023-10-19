@@ -28,6 +28,8 @@ struct CalendarView: View {
                 ChannelPickerView(channel: $channel)
                 DatePickerView(date: $date)
                 Button(action: {
+                    tabViewModel.selectedDate = date
+                    tabViewModel.selectedChannel = channel
                     tabViewModel.selectedTab = 1
                 }) {
                     Text("Show channel: \(channel.rawValue) on \(date, formatter: dateFormatter)")
