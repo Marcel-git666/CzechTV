@@ -19,20 +19,18 @@ class NetworkManager: ObservableObject {
     
     @Published var program: Program = Program.init(porad: [])
     @Published var error: NetworkError?
+    private let session: URLSession
+    
+    init(session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
+    }
     
     func fetchData(date: Date, channel: Channels) {
         var tvURL = CzechTVAPI.tvURL
         var urlDate: String
         var urlChannel: String
-        let formatter2: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM.yyyy"
-            return formatter
-        }()
         
-        urlDate = "&date=\(formatter2.string(from: date))"
-        print(urlDate)
-        print(date.onlyDate)
+        urlDate = "&date=\(date.onlyDate)"
         urlChannel = "&channel=\(channel)"
         tvURL = tvURL + urlDate + urlChannel
         guard let url = URL(string: tvURL) else {
