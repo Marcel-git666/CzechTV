@@ -51,7 +51,15 @@ class NetworkManagerTests: XCTestCase {
 
     
     func testFetchData_Success() {
-        let mockData = "".data(using: .utf8)// ... provide some mock XML data here
+        guard let url = Bundle(for: type(of: self)).url(forResource: "MockProgram", withExtension: "xml") else {
+            XCTFail("Missing file: MockProgram.xml")
+            return
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            XCTFail("Unable to load XML data from MockProgram.xml")
+            return
+        }
+        let mockData = data // ... provide some mock XML data here
         mockSession.data = mockData
         
         sut.fetchData(date: Date(), channel: .ct1)
@@ -61,18 +69,32 @@ class NetworkManagerTests: XCTestCase {
     }
     
     func testFetchData_DecodingError() {
-        let mockData = Data("Invalid XML".utf8) // Invalid XML data
+        // Create an expectation for a background task.
+        let expectation = XCTestExpectation(description: "Decode data")
+
+        // Set up mock data and session
+        let mockData = Data("Invalid XML".utf8)
         mockSession.data = mockData
-        
-        sut.fetchData(date: Date(), channel: .ct1)
-        
-        XCTAssertNotNil(sut.error)
-        if case .decodingError = sut.error {
-            // This is expected
-        } else {
-            XCTFail("Expected decoding error")
+
+        // Inject the mock session into the SUT (System Under Test)
+        sut = NetworkManager(session: mockSession)
+
+        // Fetch data and wait for the asynchronous process to complete
+        sut.fetchData(date: Date(), channel: .ct1) {
+            // Asserts
+            XCTAssertNotNil(self.sut.error)
+            if case .decodingError = self.sut.error {
+                print(self.sut.error?.localizedDescription)
+            } else {
+                XCTFail("Expected decoding error")
+            }
+            expectation.fulfill()
         }
+
+        // Wait for the expectation to be fulfilled
+        wait(for: [expectation], timeout: 10.0)
     }
+
     
     // Add more tests for other error scenarios...
 }

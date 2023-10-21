@@ -22,7 +22,6 @@
 		1F8BFA612AE18FD9007563D4 /* CzechTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BFA602AE18FD9007563D4 /* CzechTVAPI.swift */; };
 		1FE5684F29A815A800FF45B5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5684E29A815A800FF45B5 /* Program.swift */; };
 		1FE5685A29A90FA600FF45B5 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE5685929A90FA600FF45B5 /* XMLCoder */; };
-		1FED87782AE3183E005A647E /* CzechTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED87772AE3183E005A647E /* CzechTVTests.swift */; };
 		1FED877F2AE3188D005A647E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED877E2AE3188D005A647E /* MockURLSession.swift */; };
 		1FED87812AE318E3005A647E /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED87802AE318E3005A647E /* NetworkManagerTests.swift */; };
 		1FED87832AE31A37005A647E /* MockProgram.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1FED87822AE31A37005A647E /* MockProgram.xml */; };
@@ -56,7 +55,6 @@
 		1FE5684E29A815A800FF45B5 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		1FE5685B29A91D8900FF45B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1FED87752AE3183E005A647E /* CzechTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CzechTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FED87772AE3183E005A647E /* CzechTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CzechTVTests.swift; sourceTree = "<group>"; };
 		1FED877E2AE3188D005A647E /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		1FED87802AE318E3005A647E /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		1FED87822AE31A37005A647E /* MockProgram.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MockProgram.xml; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		1FED87762AE3183E005A647E /* CzechTVTests */ = {
 			isa = PBXGroup;
 			children = (
-				1FED87772AE3183E005A647E /* CzechTVTests.swift */,
 				1FED87802AE318E3005A647E /* NetworkManagerTests.swift */,
 				1FED87822AE31A37005A647E /* MockProgram.xml */,
 				1FED877E2AE3188D005A647E /* MockURLSession.swift */,
@@ -300,7 +297,6 @@
 			files = (
 				1FED87812AE318E3005A647E /* NetworkManagerTests.swift in Sources */,
 				1FED877F2AE3188D005A647E /* MockURLSession.swift in Sources */,
-				1FED87782AE3183E005A647E /* CzechTVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

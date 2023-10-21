@@ -15,17 +15,34 @@ enum NetworkError: Error {
     case decodingError(Error)
 }
 
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}
+
+protocol URLSessionProtocol {
+    func dataTaskProtocol(with url: URL, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
+}
+
+extension URLSession: URLSessionProtocol {
+    func dataTaskProtocol(with url: URL, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+        return dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTaskProtocol
+    }
+}
+
+
 class NetworkManager: ObservableObject {
     
     @Published var program: Program = Program.init(porad: [])
     @Published var error: NetworkError?
-    private let session: URLSession
+    private let session: URLSessionProtocol
     
-    init(session: URLSession = URLSession(configuration: .default)) {
+    init(session: URLSessionProtocol = URLSession(configuration: .default)) {
         self.session = session
     }
     
-    func fetchData(date: Date, channel: Channels) {
+    func fetchData(date: Date, channel: Channels, completion: (() -> Void)? = nil) {
         var tvURL = CzechTVAPI.tvURL
         var urlDate: String
         var urlChannel: String
@@ -37,8 +54,8 @@ class NetworkManager: ObservableObject {
             self.error = .badURL
             return
         }
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url) { data, response, error in
+        let task = self.session.dataTaskProtocol(with: url) { data, response, error in
+            print("Inside NetworkManager's data task completion handler.")
             if let error = error {
                 DispatchQueue.main.async {
                     self.error = .networkProblem(error)
@@ -59,8 +76,11 @@ class NetworkManager: ObservableObject {
                     self.program = decodedData
                 }
             } catch let decodingError {
+                print("Caught decoding error: \(decodingError)")
                 DispatchQueue.main.async {
                     self.error = .decodingError(decodingError)
+                    print("Dispatched error is \(String(describing: decodingError.localizedDescription))")
+                    completion?()
                 }
             }
         }
