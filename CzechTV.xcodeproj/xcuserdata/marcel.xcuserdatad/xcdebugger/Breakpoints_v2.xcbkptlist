@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "22E2A098-A27A-40F8-8DF4-3020A9A0A974"
-            shouldBeEnabled = "No"
+            uuid = "7D9C5541-28AC-427B-B7E8-66814E9CB49E"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CzechTVTests/NetworkManagerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "testFetchData_DecodingError()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testParseMockProgram()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
